@@ -1,4 +1,5 @@
 # Global Solar System Infrastructure
+```
 Global solar system infrastructure refers to the idea of building a network of structures and systems in the solar system that would allow humanity to more fully explore and utilize the resources of the solar system.
 
 This could include things like space habitats for human settlement,
@@ -8,6 +9,8 @@ The goal of global solar system infrastructure would be to create a sustainable 
 allowing us to expand our civilization beyond the confines of Earth.
 This is an ambitious and long-term goal that would require significant technological advances and international cooperation,
 but it has the potential to greatly benefit humanity and unlock the vast resources of the solar system.
+```
+
 ## Project setup
 ```
 npm install

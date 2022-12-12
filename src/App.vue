@@ -7,7 +7,7 @@
 	<p> The goal of global solar system infrastructure would be to create a sustainable and self-sufficient human presence in the solar system, </p>
 	<p> allowing us to expand our civilization beyond the confines of Earth. </p>
 	<p> This is an ambitious and long-term goal that would require significant technological advances and international cooperation, </p>
-	<p> but it has the potential to greatly benefit humanity and unlock the vast resources of the solar system."</p>
+	<p> but it has the potential to greatly benefit humanity and unlock the vast resources of the solar system.</p>
 	
 	<CelestialEntities msg="Test Body" />
 </template>
