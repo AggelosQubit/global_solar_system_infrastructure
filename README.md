@@ -1,4 +1,4 @@
-# global_solar_system_infrastructure
+# Global Solar System Infrastructure
 
 ## Project setup
 ```
