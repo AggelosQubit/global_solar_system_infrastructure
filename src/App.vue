@@ -1,6 +1,6 @@
 <template >
 	<div @wheel="parallaxScrolling">
-		<div class="parallax" id="1">
+		<div class="parallax" ref="1">
 			<div>
 				<h1 class="title">Global Solar System Infrastructure</h1>
 			</div>
@@ -17,13 +17,13 @@
 			</div>
 		</div>
 
-		<div class="parallax" id="2">
+		<div class="parallax" ref="2">
 			<div>
 				<h1 class="title">Our Celestial Bodies</h1>
 			</div>
 			<CelestialEntities msg="Test Body" />
 		</div>
-		<div class="parallax"  id="3">
+		<div class="parallax"  ref="3">
 			
 		</div>
 	</div>
@@ -41,26 +41,23 @@ export default {
 	},
 	methods:{
 		parallaxScrolling(event){
+			//KO AS OF NOW
 			if( event==undefined || event.deltaY == undefined){
 				return 0;
 			}
 			if(event.deltaY==100){
 				currentDivSection++;
-				console.log(document.getElementById(currentDivSection+""))
-				document.getElementById(currentDivSection+"").scrollIntoView({behavior: 'smooth'})
+				console.log();
+				this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
 			}else{
 				if(currentDivSection<=1){
 					currentDivSection=1;
-					console.log(document.getElementById(currentDivSection+""))
-					document.getElementById(currentDivSection+"").scrollIntoView({behavior: 'smooth'})
+					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
 				}else{
 					currentDivSection--;
-					console.log(document.getElementById(currentDivSection+""))
-					document.getElementById(currentDivSection+"").scrollIntoView({behavior: 'smooth'})
-				}
-				
+					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
+				}	
 			}
-			
 			console.log(event.deltaY +" "+currentDivSection)
 		}
 	}
