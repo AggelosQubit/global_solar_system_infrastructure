@@ -23,10 +23,37 @@
 			</div>
 			<CelestialEntities msg="Test Body" />
 		</div>
-		<div class="parallax"  ref="3">
-			
-		</div>
 	</div>
+	<footer>
+		<div class="container-fluid py-3 bg-dark text-white">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 offset-md-1 text-center text-md-left">
+						<!-- Add your copyright notice here -->
+						<p class="mb-0">Copyright &copy; AggelosQubit 2022</p>
+					</div>
+					<div class="col-md-2 text-center text-md-right">
+						<!-- Add a link to your GitHub profile -->
+						<a href="https://github.com/AggelosQubit" class="text-white" target="_blank">
+							<i class="fab fa-github mr-2"></i>GitHub
+						</a>
+					</div>
+					<div class="col-md-2 text-center text-md-right">
+						<!-- Add a link to your GitHub profile -->
+						<a href="https://drum.io/aggelosqubit" class="text-white" target="_blank">
+							<i class="fab fa-github mr-2"></i>Drum Page
+						</a>
+					</div>
+					<div class="col-md-2 text-center text-md-right">
+						<!-- Add a link to your GitHub profile -->
+						<a href="https://www.instagram.com/theintrovertedprogrammer/" class="text-white" target="_blank">
+							<i class="fab fa-github mr-2"></i>Instagram
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </template>
 
 <script>
