@@ -92,8 +92,19 @@ export default {
 </script>
 
 <style>
-body,html{
 
+/*****************************
+ All rights reserved.
+ AllFont.net (c) 2011-2015
+ *****************************/
+ @font-face {
+    font-family: 'Agency FB';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../public/assets/AgencyFB-Bold.ttf);
+}
+
+body,html{
 	font-family: 'Agency FB';
 	min-height: 100vh;
 }
