@@ -30,7 +30,7 @@
 				<div class="row">
 					<div class="col-md-4 offset-md-1 text-center text-md-left">
 						<!-- Add your copyright notice here -->
-						<p class="mb-0">Copyright &copy; AggelosQubit 2022</p>
+						<p class="mb-0">Copyright &copy; AggelosQubit {{ new Date().getFullYear() }}</p>
 					</div>
 					<div class="col-md-2 text-center text-md-right">
 						<!-- Add a link to your GitHub profile -->
