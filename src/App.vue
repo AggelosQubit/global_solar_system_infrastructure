@@ -24,6 +24,7 @@
 			<CelestialEntities msg="Test Body" />
 		</div>
 	</div>
+	<!------------------------->
 	<footer>
 		<div class="container-fluid py-3 bg-dark text-white">
 			<div class="container">
@@ -69,20 +70,20 @@ export default {
 	methods:{
 		parallaxScrolling(event){
 			//KO AS OF NOW
-			if( event==undefined || event.deltaY == undefined){
+			if( !event.ctrlkey && (event==undefined || event.deltaY == undefined) ){
 				return 0;
 			}
 			if(event.deltaY==100){
 				currentDivSection++;
 				console.log();
-				this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
+				this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
 			}else{
 				if(currentDivSection<=1){
 					currentDivSection=1;
-					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
+					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
 				}else{
 					currentDivSection--;
-					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth'});
+					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
 				}	
 			}
 			console.log(event.deltaY +" "+currentDivSection)
