@@ -2,7 +2,7 @@
 	<div @wheel="parallaxScrolling">
 		<div class="parallax" ref="1">
 			<div>
-				<h1 class="title">Global Solar System Infrastructure</h1>
+				<h1 class="title">Global Solar System Infrastructure Recette</h1>
 			</div>
 			
 			<div class="gssiDef">
