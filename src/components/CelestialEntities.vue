@@ -33,16 +33,13 @@
 		</table>
 	-->
 	
-	<div class="row">
+	<div class="planetCardView">
 		<!-- Use the v-for loop to display a card for each element in the planetsData array -->
-		<div  class=" col-md-3 planetCards" v-for="planet in planetsData" :key="planet.id">
-			<!-- Display the planet's image, if it exists--> 
-			<img style="height: 200px;width: 200px;" v-if="planet.image" :src="planet.image" class=" img-thumbnail" alt="Planet image">
-			
-			<div class="">
-				<!-- Display the planet's name -->
-				<p class="title"><a  href="" >{{ planet.englishName }}</a></p>
-				<!-- Display the planet's average temperature -->
+		<div  class="planetCards" v-for="planet in planetsData" :key="planet.id">
+			<img v-if="planet.image" :src="planet.image" class="imagePlanet" alt="Planet image">
+			<p class="title"><a  href="" >{{ planet.englishName }}</a></p>
+
+			<div v-on:click="showClick()" class="toTransform">
 				<p class="title"><strong>Average temperature:</strong> {{ Math.round(planet.avgTemp -273.15)+'°C' }}</p>
 				<!-- Display the planet's gravity -->
 				<p class="title"><strong>Gravity:</strong> {{ planet.gravity }} m/s²</p>
@@ -52,6 +49,46 @@
 		</div>
 	</div>
 </template>
+
+<style scoped>
+.planetCardView{
+	display: flex;
+	flex-grow: 8;
+	flex-wrap: wrap;
+}
+.planetCards {
+	opacity: 0.8;
+	
+	background-color: #161616;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 26px;
+	color: #333;
+	justify-content: center;
+	align-items: center;
+
+}
+.planetCards .toTransform{
+	opacity: 0;
+}
+.planetCards .toTransform:hover{
+	transform: translateY(10px);
+	transition: 0.5s;
+	opacity: 1;
+}
+.imagePlanet{
+	backdrop-filter: blur(20px);
+	height: 200px;
+	width: 200px;
+}
+
+.title{
+	text-align: center;
+	color: #03859c;
+	/*text-shadow: 2px 2px rgba(255, 255, 255, 0.75);*/
+}
+
+</style>
 
 <script>
 
@@ -78,33 +115,14 @@ export default {
 			planetsData : []
 		}
 	},
-	methods:{
-
+	methods : {
+		showClick : function (){
+			console.log("IN showClick")
+		}
 	}
 }
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.title{
-	position: relative;
-	text-align: center;
-	color: #03859c;
-	text-shadow: 2px 2px rgba(255, 255, 255, 0.75);
-}
-.planetCards {
-  /* Ajoutez une bordure autour de la table */
-  border: 1px solid #ddd;
 
-  /* Ajustez la taille et la police de caractères de la table */
-  font-size: 26px;
-
-  /* Ajustez la couleur de fond et la couleur de texte des cellules */
-  
-  color: #333;
-
-  /* Ajustez la couleur de fond et la couleur de texte des en-têtes de colonnes */
-  
-}
-</style>
