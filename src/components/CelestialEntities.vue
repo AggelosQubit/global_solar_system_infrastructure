@@ -57,9 +57,6 @@ export default {
 		msg: String,
 	},
 	created(){
-console.log("ENV FULL:", process.env);
-console.log("API Key:", process.env.VUE_APP_API_KEY_SYS_SOL);
-
 
 		for(var i=0;i< planets.length;i++){
 
