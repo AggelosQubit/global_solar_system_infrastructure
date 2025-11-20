@@ -2,7 +2,7 @@
 	<div @wheel="parallaxScrolling">
 		<div class="parallax" ref="1">
 			<div>
-				<h1 class="title">Global Solar System Infrastructure Recette</h1>
+				<h1 class="title">Global Solar System Infrastructure</h1>
 			</div>
 			
 			<div class="gssiDef">
@@ -41,13 +41,7 @@
 					</div>
 					<div class="col-md-2 text-center text-md-right">
 						<!-- Add a link to your GitHub profile -->
-						<a href="https://drum.io/aggelosqubit" class="text-white" target="_blank">
-							<i class="fab fa-github mr-2"></i>Drum Page
-						</a>
-					</div>
-					<div class="col-md-2 text-center text-md-right">
-						<!-- Add a link to your GitHub profile -->
-						<a href="https://www.instagram.com/theintrovertedprogrammer/" class="text-white" target="_blank">
+						<a href="https://www.instagram.com/AggelosQubit/" class="text-white" target="_blank">
 							<i class="fab fa-github mr-2"></i>Instagram
 						</a>
 					</div>
@@ -60,35 +54,13 @@
 <script>
 import CelestialEntities from './components/CelestialEntities.vue';
 
-let currentDivSection=0;
 
 export default {
 	name: 'App',
 	components: {
 		CelestialEntities	
 	},
-	methods:{
-		parallaxScrolling(event){
-			//KO AS OF NOW
-			if( !event.ctrlkey && (event==undefined || event.deltaY == undefined) ){
-				return 0;
-			}
-			if(event.deltaY==100){
-				currentDivSection++;
-				console.log();
-				this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
-			}else{
-				if(currentDivSection<=1){
-					currentDivSection=1;
-					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
-				}else{
-					currentDivSection--;
-					this.$refs[currentDivSection+""].scrollIntoView({behavior:'smooth',block:'center'});
-				}	
-			}
-			console.log(event.deltaY +" "+currentDivSection)
-		}
-	}
+	methods:{}
 }
 </script>
 
@@ -98,21 +70,15 @@ export default {
  All rights reserved.
  AllFont.net (c) 2011-2015
  *****************************/
- @font-face {
-    font-family: 'Agency FB';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../public/assets/AgencyFB-Bold.ttf);
-}
 
 body,html{
-	font-family: 'Agency FB';
+	font-family: 'Orbitron';
 	min-height: 100vh;
 }
 .parallax{
 	/*Parallax Effect*/
-	min-height: 100vh;
-	background-image: url('./assets/01-solar-system-pia12114_orig.webp') ;
+	min-height: 70vh;
+	background-image: url('/public/assets/01-solar-system-pia12114_orig.webp') ;
 	/*background-image: url('./assets/aba035ac0ef13a0833ca3d3ecc4e592f.jpg') ;*/
 	background-attachment: fixed;
 	background-position: center;
@@ -135,7 +101,7 @@ body,html{
 	text-align: center;
 	color: rgb(255, 255, 255);
 	text-shadow: 2px 2px #03859c;
-	font-size: 1cm;
+	font-size: 20px;
 	transition: color 2s, font-size 5s;
 }
 

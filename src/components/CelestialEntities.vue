@@ -49,49 +49,7 @@
 		</div>
 	</div>
 </template>
-
-<style scoped>
-.planetCardView{
-	display: flex;
-	flex-grow: 8;
-	flex-wrap: wrap;
-}
-.planetCards {
-	opacity: 0.8;
-	
-	background-color: #161616;
-	border: 1px solid #ddd;
-	border-radius: 8px;
-	font-size: 26px;
-	color: #333;
-	justify-content: center;
-	align-items: center;
-
-}
-.planetCards .toTransform{
-	opacity: 0;
-}
-.planetCards .toTransform:hover{
-	transform: translateY(10px);
-	transition: 0.5s;
-	opacity: 1;
-}
-.imagePlanet{
-	backdrop-filter: blur(20px);
-	height: 200px;
-	width: 200px;
-}
-
-.title{
-	text-align: center;
-	color: #03859c;
-	/*text-shadow: 2px 2px rgba(255, 255, 255, 0.75);*/
-}
-
-</style>
-
 <script>
-
 let planets=["Mercury","Venus","Earth","Mars","Jupiter","Saturn","Uranus","Neptune"]
 export default {
 	name: 'CelestialEntities',
@@ -99,11 +57,22 @@ export default {
 		msg: String,
 	},
 	created(){
+console.log("ENV FULL:", process.env);
+console.log("API Key:", process.env.VUE_APP_API_KEY_SYS_SOL);
+
+
 		for(var i=0;i< planets.length;i++){
-			fetch("https://api.le-systeme-solaire.net/rest.php/bodies/"+planets[i])
+
+			fetch("/rest/bodies/"+planets[i],{
+				headers:{
+					"Authorization": `Bearer ${process.env.VUE_APP_API_KEY_SYS_SOL}`
+				}
+			}
+
+			)
 			.then( (res)	=> res.json() )
 			.then( (data)	=>{
-				data.image=`../assets/${(data.englishName).toLowerCase()+'.jpg'}`
+				data.image=`/assets/${(data.englishName).toLowerCase()+'.png'}`
 				this.planetsData.push(data); 
 			
 			})
@@ -125,4 +94,46 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
+
+<style scoped>
+.planetCardView{
+	display: flex;
+	flex-grow: 8;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.planetCards {
+	opacity: 0.8;
+	width: 25%;
+	height: 700px;
+	background-color: #161616;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	font-size: 18px;
+	color: #333;
+	justify-content: center;
+	align-items: center;
+
+}
+.planetCards .toTransform{
+	opacity: 0;
+}
+.planetCards .toTransform:hover{
+	transform: translateY(10px);
+	transition: 0.5s;
+	opacity: 1;
+}
+.imagePlanet{
+	backdrop-filter: blur(20px);
+	
+	width: 100%;
+}
+
+.title{
+	text-align: center;
+	color: #03859c;
+	/*text-shadow: 2px 2px rgba(255, 255, 255, 0.75);*/
+}
+
+</style>
 
