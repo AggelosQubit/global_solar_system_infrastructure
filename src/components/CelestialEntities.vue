@@ -60,7 +60,7 @@ export default {
 
 		for(var i=0;i< planets.length;i++){
 
-			fetch("https://api.le-systeme-solaire.net/rest/bodies/"+planets[i],{
+			fetch("https://corsproxy.io/?https://api.le-systeme-solaire.net/rest/bodies/"+planets[i],{
 				headers:{
 					"Authorization": `Bearer ${process.env.VUE_APP_API_KEY_SYS_SOL}`
 				}
