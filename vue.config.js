@@ -1,5 +1,7 @@
 const { defineConfig } = require('@vue/cli-service')
 
+const solarApiKey = process.env.VUE_APP_API_KEY_SYS_SOL || process.env.API_KEY_SYS_SOL
+
 module.exports = defineConfig({
   transpileDependencies: true,
 
@@ -8,8 +10,11 @@ module.exports = defineConfig({
       '^/rest': {
         target: 'https://api.le-systeme-solaire.net',
         changeOrigin: true,
-        secure: false,
-        pathRewrite: { '^/rest': '/rest' }
+        secure: true,
+        pathRewrite: { '^/rest': '/rest' },
+        headers: solarApiKey
+          ? { Authorization: `Bearer ${solarApiKey}` }
+          : {}
       }
     }
   }
